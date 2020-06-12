@@ -25,6 +25,8 @@
 #include <stdbool.h>
 #include "../../include/libc/stdlib.h"
 
+#include "game/area.h"
+
 u8 optmenu_open = 0;
 
 static u8 optmenu_binding = 0;
@@ -201,11 +203,7 @@ static void optmenu_act_exit(UNUSED struct Option *self, s32 arg) {
 }
 
 static void optvideo_reset_window(UNUSED struct Option *self, s32 arg) {
-    if (!arg) {
-        // Restrict reset to A press and not directions
-        configWindow.reset = true;
-        configWindow.settings_changed = true;
-    }
+    close_pause_menu();
 }
 
 static void optvideo_apply(UNUSED struct Option *self, s32 arg) {
@@ -485,7 +483,7 @@ void optmenu_draw_prompt(void) {
 void optmenu_toggle(void) {
     if (optmenu_open == 0) {
         #ifndef nosound
-        play_sound(SOUND_MENU_CHANGE_SELECT, gDefaultSoundArgs);
+        //play_sound(SOUND_MENU_CHANGE_SELECT, gDefaultSoundArgs);
         #endif
 
         // HACK: hide the last option in main if cheats are disabled

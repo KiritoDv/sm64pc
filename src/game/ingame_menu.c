@@ -1865,6 +1865,14 @@ void set_menu_mode(s16 mode) {
     }
 }
 
+void close_pause_menu(void){
+    optmenu_toggle();
+    set_play_mode(0);
+    level_set_transition(0, 0);
+    gDialogBoxState = DIALOG_STATE_OPENING;        
+    gMenuMode = -1;
+}
+
 void reset_cutscene_msg_fade(void) {
     gCutsceneMsgFade = 0;
 }

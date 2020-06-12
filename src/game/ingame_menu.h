@@ -140,6 +140,7 @@ extern void create_dialog_inverted_box(s16 dialog);
 extern void create_dialog_box_with_response(s16 dialog);
 extern void reset_dialog_render_state(void);
 extern void set_menu_mode(s16 mode);
+extern void close_pause_menu(void);
 extern void reset_cutscene_msg_fade(void);
 extern void dl_rgba16_begin_cutscene_msg_fade(void);
 extern void dl_rgba16_stop_cutscene_msg_fade(void);
