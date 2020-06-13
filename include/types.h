@@ -6,6 +6,7 @@
 
 #include <ultra64.h>
 #include "macros.h"
+#include "limits.h"
 
 
 // Certain functions are marked as having return values, but do not
@@ -327,10 +328,10 @@ struct MarioState
     /*0x9C*/ struct Controller *controller;
     /*0xA0*/ struct MarioAnimation *animation;
     /*0xA4*/ u32 collidedObjInteractTypes;
-    /*0xA8*/ s16 numCoins;
-    /*0xAA*/ s16 numStars;
+    /*0xA8*/ u64 numCoins;
+    /*0xAA*/ u64 numStars;
     /*0xAC*/ s8 numKeys; // Unused key mechanic
-    /*0xAD*/ s8 numLives;
+    /*0xAD*/ u64 numLives;
     /*0xAE*/ s16 health;
     /*0xB0*/ s16 unkB0;
     /*0xB2*/ u8 hurtCounter;

@@ -912,21 +912,21 @@ void update_hud_values(void) {
             }
         }
 
-        if (gMarioState->numLives > 100) {
-            gMarioState->numLives = 100;
+        if (gMarioState->numLives > ULLONG_MAX) {
+            gMarioState->numLives = ULLONG_MAX;
         }
 
 #if BUGFIX_MAX_LIVES
-        if (gMarioState->numCoins > 999) {
-            gMarioState->numCoins = 999;
+        if (gMarioState->numCoins > ULLONG_MAX) {
+            gMarioState->numCoins = ULLONG_MAX;
         }
 
-        if (gHudDisplay.coins > 999) {
-            gHudDisplay.coins = 999;
+        if (gHudDisplay.coins > ULLONG_MAX) {
+            gHudDisplay.coins = ULLONG_MAX;
         }
 #else
-        if (gMarioState->numCoins > 999) {
-            gMarioState->numLives = (s8) 999; //! Wrong variable
+        if (gMarioState->numCoins > ULLONG_MAX) {
+            gMarioState->numLives = (s8) ULLONG_MAX; //! Wrong variable
         }
 #endif
 

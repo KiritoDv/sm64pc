@@ -88,9 +88,9 @@ extern u8 unused4[2];
 extern s8 sTimerRunning;
 
 struct HudDisplay {
-    /*0x00*/ s16 lives;
-    /*0x02*/ s16 coins;
-    /*0x04*/ s16 stars;
+    /*0x00*/ u64 lives;
+    /*0x02*/ u64 coins;
+    /*0x04*/ u64 stars;
     /*0x06*/ s16 wedges;
     /*0x08*/ s16 keys;
     /*0x0A*/ s16 flags;
